@@ -1,0 +1,13 @@
+name = "syncdesk-api"
+main = "src/index.ts"
+compatibility_date = "2025-09-01"
+
+[vars]
+DEMO_MODE = "true"
+ALLOWED_ORIGINS = "*"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "syncdesk-db"
+database_id = "REPLACE_WITH_YOUR_D1_ID"
+migrations_dir = "migrations"
