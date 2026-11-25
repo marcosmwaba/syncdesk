@@ -9,5 +9,5 @@ ALLOWED_ORIGINS = "*"
 [[d1_databases]]
 binding = "DB"
 database_name = "syncdesk-db"
-database_id = "REPLACE_WITH_YOUR_D1_ID"
+database_id = "cec24284-7d88-4059-8cb1-5a8879e34871"
 migrations_dir = "migrations"
