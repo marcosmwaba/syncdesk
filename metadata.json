@@ -1,0 +1,6 @@
+{
+  "name": "SyncDesk",
+  "description": "Multi-department service desk for requests, incidents, and changes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

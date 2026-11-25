@@ -1,0 +1,134 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * SyncDesk Design Tokens
+ * Palette: Crisp Professional White & Obsidian paired with Zambian Flag Mixology
+ * (Emerald Green, Copper Orange, Crimson Red, Obsidian Ink)
+ */
+:root {
+  --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  /* 60% Dominant Neutral Canvas (Light / White Mode) */
+  --bg-canvas: #fafcfb;
+  --bg-surface: #f2f5f3;
+  --bg-surface-alt: #e7ede9;
+  --bg-elevated: #ffffff;
+
+  /* 30% Structural Surfaces & Typography */
+  --border-subtle: #e1e7e3;
+  --border-strong: #c4d0c8;
+  --text-primary: #101713;
+  --text-secondary: #435149;
+  --text-muted: #64736b;
+
+  /* 10% Zambian Flag Mixology Accents */
+  --brand-emerald: #13732b;
+  --brand-emerald-hover: #0e5a21;
+  --brand-emerald-fg: #ffffff;
+  --brand-emerald-soft: #e9f5ec;
+  --brand-emerald-border: #b3ddc0;
+  --brand-emerald-text: #0f6224;
+
+  --brand-copper: #c25900;
+  --brand-copper-soft: #fff3e8;
+  --brand-copper-border: #f3c8a1;
+  --brand-copper-text: #9a4400;
+
+  --brand-crimson: #c41e1e;
+  --brand-crimson-soft: #fef1f1;
+  --brand-crimson-border: #f6c4c4;
+  --brand-crimson-text: #991b1b;
+
+  --brand-obsidian: #101713;
+  --bar-in-progress: #3f4d46;
+  --focus-ring: #13732b;
+  --shadow-subtle: 0 1px 3px 0 rgba(16, 23, 19, 0.05), 0 1px 2px -1px rgba(16, 23, 19, 0.03);
+  --shadow-card-hover: 0 6px 18px -6px rgba(16, 23, 19, 0.09), 0 2px 6px -2px rgba(16, 23, 19, 0.04);
+  --ambient-glow: radial-gradient(60% 50% at 85% 0%, rgba(19, 115, 43, 0.055) 0%, rgba(194, 89, 0, 0.025) 50%, transparent 100%);
+}
+
+.dark {
+  /* 60% Dominant Obsidian Canvas (Dark Mode) */
+  --bg-canvas: #090d0b;
+  --bg-surface: #0f1512;
+  --bg-surface-alt: #17201b;
+  --bg-elevated: #131a16;
+
+  /* 30% Structural Surfaces & Typography */
+  --border-subtle: #212c26;
+  --border-strong: #324339;
+  --text-primary: #f2f5f3;
+  --text-secondary: #b0bdb6;
+  --text-muted: #7f8f86;
+
+  /* 10% Zambian Flag Mixology Accents (Dark Mode Compensated) */
+  --brand-emerald: #22a345;
+  --brand-emerald-hover: #2ab851;
+  --brand-emerald-fg: #07140a;
+  --brand-emerald-soft: rgba(34, 163, 69, 0.14);
+  --brand-emerald-border: rgba(34, 163, 69, 0.34);
+  --brand-emerald-text: #5cd47d;
+
+  --brand-copper: #f28c28;
+  --brand-copper-soft: rgba(242, 140, 40, 0.14);
+  --brand-copper-border: rgba(242, 140, 40, 0.34);
+  --brand-copper-text: #f7ac62;
+
+  --brand-crimson: #ef4444;
+  --brand-crimson-soft: rgba(239, 68, 68, 0.14);
+  --brand-crimson-border: rgba(239, 68, 68, 0.34);
+  --brand-crimson-text: #fca5a5;
+
+  --brand-obsidian: #f2f5f3;
+  --bar-in-progress: #7b8d83;
+  --focus-ring: #2ab851;
+  --shadow-subtle: 0 1px 3px 0 rgba(0, 0, 0, 0.32), inset 0 1px 0 0 rgba(255, 255, 255, 0.03);
+  --shadow-card-hover: 0 10px 24px -8px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  --ambient-glow: radial-gradient(60% 50% at 85% 0%, rgba(34, 163, 69, 0.09) 0%, rgba(242, 140, 40, 0.035) 50%, transparent 100%);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-body);
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.zambia-accent-bar {
+  background: linear-gradient(
+    90deg,
+    var(--brand-emerald) 0%,
+    var(--brand-emerald) 72%,
+    var(--brand-crimson) 72%,
+    var(--brand-crimson) 86%,
+    var(--brand-copper) 86%,
+    var(--brand-copper) 100%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
